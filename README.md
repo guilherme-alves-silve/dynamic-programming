@@ -11,3 +11,6 @@ Based on the freeCodeCamp [course](https://www.youtube.com/watch?v=oBt53YbR9Kk&a
 * canSum
   * naive
   * memoized
+* howSum
+  * naive
+  * memoized
