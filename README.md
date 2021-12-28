@@ -14,3 +14,6 @@ Based on the freeCodeCamp [course](https://www.youtube.com/watch?v=oBt53YbR9Kk&a
 * howSum
   * naive
   * memoized
+* bestSum
+  * naive
+  * memoized
