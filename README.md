@@ -17,3 +17,12 @@ Based on the freeCodeCamp [course](https://www.youtube.com/watch?v=oBt53YbR9Kk&a
 * bestSum
   * naive
   * memoized
+* canConstruct
+  * naive
+  * memoized
+* countConstruct
+  * naive
+  * memoized
+* allConstruct [IN PROGRESS]
+  * naive
+  * memoized
