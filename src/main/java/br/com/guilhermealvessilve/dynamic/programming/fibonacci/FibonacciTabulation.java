@@ -1,9 +1,6 @@
 package br.com.guilhermealvessilve.dynamic.programming.fibonacci;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class FibonacciMemoizationRecursive {
+public class FibonacciTabulation {
 
     public static void main(String[] args) {
         System.out.println("fibonacci(1): " + fibonacci(1)); // 1
@@ -17,16 +14,20 @@ public class FibonacciMemoizationRecursive {
         System.out.println("fibonacci(50): " + fibonacci(50)); // 12586269025
     }
 
-    public static long fibonacci(long n) {
-        var memo = new HashMap<Long, Long>();
-        return fibonacci(n, memo);
+    public static long fibonacci(int n) {
+        var table = new long[n + 1];
+        table[1] = 1;
+        for (int i = 0; i <= n; i++) {
+            var value = table[i];
+            add(table, i + 1, value);
+            add(table, i + 2, value);
+        }
+
+        return table[n];
     }
 
-    private static long fibonacci(long n, Map<Long, Long> memo) {
-        if (memo.containsKey(n)) return memo.get(n);
-        if (n <= 2) return 1;
-        long result = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
-        memo.put(n, result);
-        return result;
+    private static void add(long[] table, int next, long value) {
+        if (table.length <= next) return;
+        table[next] += value;
     }
 }
