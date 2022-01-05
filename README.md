@@ -33,10 +33,12 @@ The code is based on: [FreeCodeCamp Course](https://www.youtube.com/watch?v=oBt5
 * canConstruct
   * naive
   * memoized
-  * tabulation [IN PROGRESS]
+  * tabulation
 * countConstruct
   * naive
   * memoized
+  * tabulation
 * allConstruct
   * naive
   * memoized
+  * tabulation
