@@ -39,7 +39,7 @@ public class AllConstructMemoizedRecursive {
             if (target.startsWith(word)) {
                 var suffixWays = allConstruct(target.substring(word.length()), wordBank, memo);
                 var targetWays = suffixWays.stream()
-                        .map(ways -> Stream.concat(Stream.of(word), ways.stream()).toList())
+                        .map(subList -> Stream.concat(Stream.of(word), subList.stream()).toList())
                         .toList();
                 result.addAll(targetWays);
             }
