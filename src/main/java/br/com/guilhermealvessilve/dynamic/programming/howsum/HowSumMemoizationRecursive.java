@@ -21,21 +21,20 @@ public class HowSumMemoizationRecursive {
         return howSum(targetSum, numbers, memo);
     }
 
-    public static List<Long> howSum(long targetSum, List<Long> numbers, Map<Long, List<Long>> memo) {
+    private static List<Long> howSum(long targetSum, List<Long> numbers, Map<Long, List<Long>> memo) {
         if (memo.containsKey(targetSum)) return memo.get(targetSum);
         if (targetSum == 0) return new ArrayList<>();
         if (targetSum < 0) return null;
 
+        List<Long> result = null;
         for (var number : numbers) {
-            var list = howSum(targetSum - number, numbers, memo);
-            if (list != null) {
-                var result = Stream.concat(Stream.of(number), list.stream()).toList();
-                memo.put(targetSum, result);
-                return result;
-            }
+            var combination = howSum(targetSum - number, numbers, memo);
+            if (null == combination) continue;
+            return Stream.concat(Stream.of(number), combination.stream())
+                    .toList();
         }
 
-        memo.put(targetSum, null);
-        return null;
+        memo.put(targetSum, result);
+        return result;
     }
 }
